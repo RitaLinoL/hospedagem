@@ -27,53 +27,123 @@ public class Main {
 
 	public static void main(String[] args) {		
 		
+		Scanner leitor = new Scanner(System.in);
+		
+		
 		ServicoQuarto servico = new ServicoQuarto();
-		Hospedagem hospedagem = new Hospedagem();
-		Camareiro camareiro = new Camareiro();
-		GregorianCalendar data = new GregorianCalendar();
-		servico.agendarServicoQuarto(data, hospedagem, camareiro);
-		
-		
-		
-		
-		///AÁıes para criaÁ„o de hotel
-		//gerando recepcionistas
-		ArrayList<Recepcionista>  recepcionistas = new ArrayList<Recepcionista>();
-		ArrayList<String> idiomas = new ArrayList<String>();
-		idiomas.add("PortuguÍs");
-		idiomas.add("InglÍs");
-		idiomas.add("Hebraico");
-		recepcionistas.add(new Recepcionista("1", "M·rio", 3.000, idiomas));
-		idiomas.clear();
-		idiomas.add("Grego");
-		idiomas.add("InglÍs");
-		idiomas.add("FrancÍs");
-		recepcionistas.add(new Recepcionista("2", "MÙnica", 30000, idiomas));
-		
-		//gerando camareiros
-		ArrayList<Camareiro>  camareiros = new ArrayList<Camareiro>();
-		camareiros.add(new Camareiro("1", "Aline", 40000));
-		camareiros.add(new Camareiro("2", "JosÈ", 40000));
-		camareiros.add(new Camareiro("3", "Rodrigo", 40000));
-		
-		
-		//gerando  hospedagens
-		ArrayList<Hospedagem> hospedagens = new ArrayList<Hospedagem>();
-		Hospede hospede = new Hospede();
-		Aposento aposento = new Aposento(1, 300, "description", 2);
-		ArrayList<Consumo> consumo = new ArrayList<Consumo>();
-		consumo.add(new Consumo(1, "agua", "1", 2.0));
-		Conta conta = new Conta(1, 300, false, consumo);
-		
-		hospedagens.add(new Hospedagem(1, new GregorianCalendar(2019, 7,1,13,40), new GregorianCalendar(2019, 8,1,13,40),hospede, aposento, conta ));
-		
-		Hotel hotel = new Hotel("Malibu", "23124542-324", hospedagens, recepcionistas, camareiros);
+			
 				
-
+		///Cria√ß√£o do hotel 
+		System.out.println("CRIANDO SEU HOTEL...");
+		System.out.println("Digite o nome do seu hotel.");
+		String nome_hotel = leitor.next();
+		System.out.println("Digite o CNPJ do seu hotel.");
+		String cnpj_hotel = leitor.next();
+		
+		Hotel hotel = new Hotel(nome_hotel, cnpj_hotel);
+	
+		int opcao = -1;
 		///loop de exibicao do menu
 		while(true) {
-			break;
+			System.out.println();
+			System.out.println(String.format("Welcome at hotel %s", hotel.getNome()));
+			System.out.println("Digite o n√∫mero correspondente a sua op√ß√£o");
+			
+			System.out.println("1 - Adicionar Recepcionistas \n" +
+					"2 - Adicionar Camareiros \n " +
+					"3 - Nova Hospedagem\n" +
+					"4 - Agendar servi√ßo de quarto\n" +
+					"5 - Realizar servi√ßo de quarto\n" +
+					"6 - Listar funcion√°rios\n" +
+					"" +
+					"" +
+					"" +
+					" 0 - sair");
+			opcao = leitor.nextInt();
+			
+			
+			switch (opcao) {
+			case 1:
+				//adicionar recepcionista in array recepcionistas do hotel
+				Recepcionista recepcionista;
+				System.out.print("Digite a matricula: ");
+				String matricula_r = leitor.next();
+				System.out.print("Digite o nome: ");
+				String nome_r = leitor.next();
+				System.out.print("Digite o sal√°rio: ");
+				Double salario_r = leitor.nextDouble();
+
+				System.out.println("Quais idiomas o recepcionista domina? ");
+				ArrayList<String> idiomas = new ArrayList<String>();
+				
+				boolean addId = true;
+				while(addId){
+					System.out.println("Digite o idioma.");
+					idiomas.add(leitor.next());
+					
+					System.out.println("1- adicionar idioma");
+					System.out.println("0 - finalizar cadastro");
+					addId = leitor.nextInt() == 1? true:false;					
+				}
+				
+				recepcionista = new Recepcionista(matricula_r, nome_r, salario_r, idiomas);
+				
+				hotel.addRecepcionista(recepcionista);
+				
+				break;
+			case 2:
+				//adicionar camareiro in array camareiros do hotel
+				Camareiro camareiro;
+				System.out.print("Digite a matricula: ");
+				String matricula_c = leitor.next();
+				System.out.print("Digite o nome: ");
+				String nome_c = leitor.next();
+				System.out.print("Digite o sal√°rio: ");
+				Double salario_c = leitor.nextDouble();
+				
+				camareiro = new Camareiro(matricula_c, nome_c, salario_c);
+				
+				hotel.addCamareiros(camareiro);
+				break;
+			case 3:
+				//adicionar hospedagens in array hospedagens
+				
+				break;
+			case 4:
+				//agendar servi√ßo de quarto
+				
+				Hospedagem hospedagem = new Hospedagem();
+				GregorianCalendar data = new GregorianCalendar();
+				
+						
+				break;
+			case 5:
+				break;
+			case 6:
+				ArrayList<Recepcionista> recepcionistas = hotel.getRecepcionistas();
+				System.out.println("RECEPCIONISTA");
+				for(Recepcionista r : recepcionistas) {
+					  System.out.println(String.format("Matricula: ", r.getMatricula()));
+					  System.out.println(String.format("Nome: ", r.getNome()));
+				}
+				
+				ArrayList<Camareiro> camareiros = new ArrayList<Camareiro>();
+				camareiros.addAll(hotel.getCamareiros());
+				System.out.println("RECEPCIONISTA");
+				for(Camareiro c : camareiros) {
+					  System.out.println(String.format("Matricula: ", c.getMatricula()));
+					  System.out.println(String.format("Nome: ", c.getNome()));
+				} 
+				break;
+			case 7:
+				break;
+			}
+			
+			if(opcao == 0 ){
+				break;
+			}
 		}
+		System.out.println("GOOD BYE!");
 	}
 
 }
