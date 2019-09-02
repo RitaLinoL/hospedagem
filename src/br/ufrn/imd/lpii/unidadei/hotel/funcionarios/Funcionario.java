@@ -1,7 +1,7 @@
 package br.ufrn.imd.lpii.unidadei.hotel.funcionarios;
 
 /**
- * Classe Funcionario, classe abstrata que implementa atributos gerais dos funcionários
+ * Classe Funcionario, classe abstrata que implementa atributos gerais dos funcionï¿½rios
  *
  * @author Rita Lopes
  * @author Hilton Thallyson
@@ -26,7 +26,7 @@ public abstract class Funcionario {
 	}
 	
 	/**
-	 * Método Contrutor parametrizado
+	 * MÃ©todo Contrutor parametrizado
 	 * @param matricula - atributo identificador do funcionario
 	 * @param nome - nome do funcionario
 	 * @param salario - salario do funcionario

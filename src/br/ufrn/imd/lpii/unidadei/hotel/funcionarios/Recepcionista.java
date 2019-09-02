@@ -3,7 +3,7 @@ package br.ufrn.imd.lpii.unidadei.hotel.funcionarios;
 import java.util.ArrayList;
 
 /**
- * Classe Recepcionista, herda de funcionarios e é responsavel pelos dados especificos dos recepcionistas
+ * Classe Recepcionista, herda de funcionarios e Ã© responsavel pelos dados especificos dos recepcionistas
  *
  * @author Rita Lopes
  * @author Hilton Thallyson
@@ -17,7 +17,7 @@ public class Recepcionista extends Funcionario {
 	private ArrayList<String> idiomasQueDomina;
 	
 	/**
-	 * Método Contrutor não parametrizado
+	 * MÃ©todo Contrutor nÃ£o parametrizado
 	 */
 	public Recepcionista() {
 		super();
@@ -26,11 +26,11 @@ public class Recepcionista extends Funcionario {
 	}
 	
 	/**
-	 * Método Contrutor parametrizado
+	 * MÃ©todo Contrutor parametrizado
 	 * @param matricula - atributo identificador do funcionario
 	 * @param nome - nome do funcionario
 	 * @param salario - salario do funcionario
-	 * @param idiomas - lista de idiomas nos quais o recepcionista é fluente
+	 * @param idiomas - lista de idiomas nos quais o recepcionista ï¿½ fluente
 	 */
 	public Recepcionista(String matricula, String nome, double salario, ArrayList<String> idiomas) {
 		super(matricula, nome, salario);
@@ -38,7 +38,7 @@ public class Recepcionista extends Funcionario {
 		this.idiomasQueDomina.addAll(idiomas);
 	}
 	
-	//MÉTODOS SETTERS AND GETTERS
+	//MÃ‰TODOS SETTERS AND GETTERS
 	public void setIdiomasQueDomina(ArrayList <String> idiomas) {
 		this.idiomasQueDomina = idiomas;
 	}
@@ -48,7 +48,7 @@ public class Recepcionista extends Funcionario {
 	
 	
 	/**
-	 * Método addIdioma, responsavel pela adiçao individual de idiomas
+	 * Mï¿½todo addIdioma, responsavel pela adiï¿½ao individual de idiomas
 	 * @param idioma - str com idioma a ser adicionado
 	 */
 	public void addIdioma(String idioma) {

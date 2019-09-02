@@ -6,7 +6,7 @@ import br.ufrn.imd.lpii.unidadei.hotel.Hospedagem;
 import br.ufrn.imd.lpii.unidadei.hotel.funcionarios.Camareiro;
 
 /**
- * Classe ServicoQuarto, classe que implementa métodos e atributos dos serviços oferecidos pelo hotel
+ * Classe ServicoQuarto, classe que implementa mï¿½todos e atributos dos serviï¿½os oferecidos pelo hotel
  *
  * @author Rita Lopes
  * @author Hilton Thallyson
@@ -23,7 +23,7 @@ public class ServicoQuarto {
 	private boolean realizado;
 	
 	/**
-	 * Construtor não parametrizado
+	 * Construtor nÃ£o parametrizado
 	 * */
 	public ServicoQuarto() {
 		this.data = new GregorianCalendar();
@@ -34,10 +34,10 @@ public class ServicoQuarto {
 	
 	/**
 	 * Construtor parametrizado
-	 * @param data - parametro contendo a data de realização do serviço
-	 * @param hospedagem - objeto da classe Hospedagem que armazena dados da hospedagem que solicitou o serviço
-	 * @param camareiro - objeto da classe Camareiro que armazena os dados do funcionário responsável pelo serviço
-	 * @param realizado - estado do serviço
+	 * @param data - parametro contendo a data de realizaï¿½ï¿½o do serviï¿½o
+	 * @param hospedagem - objeto da classe Hospedagem que armazena dados da hospedagem que solicitou o serviï¿½o
+	 * @param camareiro - objeto da classe Camareiro que armazena os dados do funcionï¿½rio responsï¿½vel pelo serviï¿½o
+	 * @param realizado - estado do serviï¿½o
 	 * */
 	public ServicoQuarto(GregorianCalendar data, Hospedagem hospedagem, Camareiro camareiro, boolean realizado) {
 		this.data = data;
@@ -76,7 +76,7 @@ public class ServicoQuarto {
 	}
 	
 	/**
-	  * realizarServicoQuarto - Metodo que marca um serviço como realizado
+	  * realizarServicoQuarto - Metodo que marca um serviï¿½o como realizado
 	  * 
 	  * @param hospedagem - parametro correspondente ao servico de hospedagem realizado 
 	  *	@param camareiro - funcionario responsavel pelo servico
@@ -104,7 +104,7 @@ public class ServicoQuarto {
 			this.camareiro = camareiro;
 			this.realizado = false;
 		}else {
-			System.out.println("data de serviço inválida");
+			System.out.println("data de serviï¿½o invï¿½lida");
 		}
 
 		

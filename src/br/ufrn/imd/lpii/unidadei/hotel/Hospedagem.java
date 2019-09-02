@@ -27,7 +27,7 @@ public class Hospedagem {
 	private Conta conta;
 	
 	/**
-	 * Construtor padrão
+	 * Construtor padrÃ£o
 	 * */
 	public Hospedagem() {
 		this.codigo = -1;
@@ -42,10 +42,10 @@ public class Hospedagem {
 	 * Construtor parametrizado
 	 * @param codigo - identificador da hospedagem
 	 * @param dataEntrada - chegada no hotel
-	 * @param dataSaida - saída do hotel
-	 * @param hospede - quem é o cliente responsável pela hospedagem
-	 * @param aposento - local privado onde o cliente será hospedado
-	 * @param conta - referência à conta com os gastos do cliente que é responsável pela hospedagem
+	 * @param dataSaida - saï¿½da do hotel
+	 * @param hospede - quem ï¿½ o cliente responsï¿½vel pela hospedagem
+	 * @param aposento - local privado onde o cliente serï¿½ hospedado
+	 * @param conta - referï¿½ncia ï¿½ conta com os gastos do cliente que ï¿½ responsï¿½vel pela hospedagem
 	 * */
 	public Hospedagem(int codigo, GregorianCalendar dataEntrada, GregorianCalendar dataSaida, Hospede hospede, Aposento aposento, Conta conta) {
 		this.codigo = codigo;

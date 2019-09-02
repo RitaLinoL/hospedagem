@@ -24,7 +24,7 @@ public class Hotel {
 	private ArrayList<Camareiro> camareiros;
 
 	/**
-	 * Construtor padr„o
+	 * Construtor padr√£o
 	 * */
 	public Hotel() {
 		this.nome = " ";
@@ -40,10 +40,10 @@ public class Hotel {
 	/**
 	 * Construtor parametrizado
 	 * @param nome - nome identificador do Hotel
-	 * @param cnpj - n˙mero do cadastro nacional de pessoa juridica do hotel
+	 * @param cnpj - n√∫mero do cadastro nacional de pessoa juridica do hotel
 	 * @param hospedagens- lista de hospedagens feitas no hotel
-	 * @param recepcionistas - lista de funcion·rios recepcionistas no hotel
-	 * @param camareiro - lista de funcion·rios camareiros no hotel
+	 * @param recepcionistas - lista de funcion√°rios recepcionistas no hotel
+	 * @param camareiro - lista de funcion√°rios camareiros no hotel
 	 * */
 	public Hotel(String nome, String cnpj, ArrayList<Hospedagem> hospedagens, ArrayList<Recepcionista> recepcionistas,
 			ArrayList<Camareiro> camareiros) {
@@ -55,6 +55,23 @@ public class Hotel {
 		this.recepcionistas.addAll(recepcionistas);
 		this.camareiros = new ArrayList<Camareiro>();
 		this.camareiros.addAll(camareiros);
+	}
+	
+	/**
+	 * Construtor parametrizado para cria√ß√£o inicial do hotel
+	 * @param nome - nome identificador do Hotel
+	 * @param cnpj - numero do cadastro nacional de pessoa juridica do hotel
+	 * */
+	public Hotel(String nome, String cnpj) {
+		this.nome = nome;
+		this.CNPJ = cnpj;
+		this.hospedagens = new ArrayList<Hospedagem>();
+		this.hospedagens.add(new Hospedagem());
+		this.recepcionistas = new ArrayList<Recepcionista>();
+		this.recepcionistas.add(new Recepcionista());
+		this.camareiros = new ArrayList<Camareiro>();
+		this.camareiros.add(new Camareiro());
+		
 	}
 
 	///Metodos Getters and Setters
@@ -92,5 +109,12 @@ public class Hotel {
 	}
 	public void setCamareiros(ArrayList<Camareiro> camareiros) {
 		this.camareiros = camareiros;
+	}
+	
+	public void addRecepcionista(Recepcionista recepcionista){
+		this.recepcionistas.add(recepcionista);	
+	}
+	public void addCamareiros(Camareiro camareiro){
+		this.camareiros.add(camareiro);	
 	}	
 }
