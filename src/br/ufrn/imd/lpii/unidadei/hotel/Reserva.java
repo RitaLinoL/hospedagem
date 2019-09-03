@@ -1,13 +1,15 @@
 package br.ufrn.imd.lpii.unidadei.hotel;
 
+import java.util.Set;
 import java.util.GregorianCalendar;
+import java.util.TreeSet;
 
 import br.ufrn.imd.lpii.unidadei.hotel.clientes.Conta;
 import br.ufrn.imd.lpii.unidadei.hotel.clientes.Hospede;
 
 
 /**
- * Classe Hospedagem, responsavel pela hospedagem feitas no hotel
+ * Classe Reserva, responsavel pela hospedagem feitas no hotel
  *
  * @author Rita Lopes
  * @author Hilton Thallyson
@@ -17,23 +19,23 @@ import br.ufrn.imd.lpii.unidadei.hotel.clientes.Hospede;
  */
 
 
-public class Hospedagem {
+public class Reserva {
 	//ATRIBUTOS 
 	private int codigo;
 	private GregorianCalendar dataEntrada;
 	private GregorianCalendar dataSaida;
-	private Hospede hospede;
+	private TreeSet<Hospede> hospedes;
 	private Aposento aposento;
 	private Conta conta;
 	
 	/**
 	 * Construtor padrão
 	 * */
-	public Hospedagem() {
+	public Reserva() {
 		this.codigo = -1;
 		this.dataEntrada = new GregorianCalendar();
 		this.dataSaida = new GregorianCalendar();
-		this.hospede = new Hospede();
+		this.hospedes = new TreeSet<Hospede>();
 		this.aposento = new Aposento();
 		this.conta = new Conta();
 		
@@ -43,15 +45,15 @@ public class Hospedagem {
 	 * @param codigo - identificador da hospedagem
 	 * @param dataEntrada - chegada no hotel
 	 * @param dataSaida - sa�da do hotel
-	 * @param hospede - quem � o cliente respons�vel pela hospedagem
+	 * @param hospedes - quem são os clientes que ocuparam o quarto
 	 * @param aposento - local privado onde o cliente ser� hospedado
 	 * @param conta - refer�ncia � conta com os gastos do cliente que � respons�vel pela hospedagem
 	 * */
-	public Hospedagem(int codigo, GregorianCalendar dataEntrada, GregorianCalendar dataSaida, Hospede hospede, Aposento aposento, Conta conta) {
+	public Reserva(int codigo, GregorianCalendar dataEntrada, GregorianCalendar dataSaida, Set<Hospede> hospedes, Aposento aposento, Conta conta) {
 		this.codigo = codigo;
 		this.dataEntrada = dataEntrada;
 		this.dataSaida = dataSaida;
-		this.hospede = hospede;
+		this.hospedes = (TreeSet)hospedes;
 		this.aposento = aposento;
 		this.conta = conta;
 		
@@ -79,11 +81,11 @@ public class Hospedagem {
 		this.dataSaida = dataSaida;
 	}
 	
-	public Hospede getHospede() {
-		return this.hospede;
+	public Set<Hospede> getHospede() {
+		return this.hospedes;
 	}
-	public void setHospede(Hospede hospede) {
-		this.hospede = hospede;
+	public void setHospede(Set<Hospede> hospedes) {
+		this.hospedes = (TreeSet)hospedes;
 	}
 	
 	public Aposento getAposento() {
@@ -99,4 +101,33 @@ public class Hospedagem {
 	public void setConta(Conta conta) {
 		this.conta = conta;
 	}
+	
+	
+	
+	/**
+	 * @return o primeiro hospede do conjunto ordenado, ele corresponde ao responsavel
+	 * */
+	public Hospede getResponsavel(){
+		return hospedes.first();
+	}
+	
+	
+	/**
+	 * Adiciona um hospede ao conjunto de hospedes se no aposento houver capacidade
+	 * @param hospede - o objeto a ser adicionado no conjunto de hospedes
+	 * @return true se foi possivel adicionar e false se não
+	 * */
+	public boolean addHospede(Hospede hospede){
+		if(aposento.getCapacidade() >= hospedes.size()){
+			System.out.print("O aposento só suporta ");
+			System.out.print(aposento.getCapacidade());
+			System.out.println(" Hospedes");
+			return false;
+		}		
+		
+		hospedes.add(hospede);
+		return true;
+	}
+	
+	
 }

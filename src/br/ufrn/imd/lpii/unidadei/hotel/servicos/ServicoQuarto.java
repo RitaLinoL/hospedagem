@@ -2,7 +2,7 @@ package br.ufrn.imd.lpii.unidadei.hotel.servicos;
 
 import java.util.GregorianCalendar;
 
-import br.ufrn.imd.lpii.unidadei.hotel.Hospedagem;
+import br.ufrn.imd.lpii.unidadei.hotel.Reserva;
 import br.ufrn.imd.lpii.unidadei.hotel.funcionarios.Camareiro;
 
 /**
@@ -18,7 +18,7 @@ import br.ufrn.imd.lpii.unidadei.hotel.funcionarios.Camareiro;
 public class ServicoQuarto {
 	//ATRIBUTOS
 	private GregorianCalendar data;
-	private Hospedagem hospedagem;
+	private Reserva reserva;
 	private Camareiro camareiro;
 	private boolean realizado;
 	
@@ -27,7 +27,7 @@ public class ServicoQuarto {
 	 * */
 	public ServicoQuarto() {
 		this.data = new GregorianCalendar();
-		this.hospedagem = new Hospedagem();
+		this.reserva = new Reserva();
 		this.camareiro = new Camareiro();
 		this.realizado = false;
 	}
@@ -35,13 +35,13 @@ public class ServicoQuarto {
 	/**
 	 * Construtor parametrizado
 	 * @param data - parametro contendo a data de realiza��o do servi�o
-	 * @param hospedagem - objeto da classe Hospedagem que armazena dados da hospedagem que solicitou o servi�o
+	 * @param reserva - objeto da classe Reserva que armazena dados da reserva que solicitou o servi�o
 	 * @param camareiro - objeto da classe Camareiro que armazena os dados do funcion�rio respons�vel pelo servi�o
 	 * @param realizado - estado do servi�o
 	 * */
-	public ServicoQuarto(GregorianCalendar data, Hospedagem hospedagem, Camareiro camareiro, boolean realizado) {
+	public ServicoQuarto(GregorianCalendar data, Reserva reserva, Camareiro camareiro, boolean realizado) {
 		this.data = data;
-		this.hospedagem = hospedagem;
+		this.reserva = reserva;
 		this.camareiro = camareiro;
 		this.realizado = realizado;
 	}
@@ -55,12 +55,12 @@ public class ServicoQuarto {
 		this.data = data;
 	}
 
-	public Hospedagem getHospedagem() {
-		return hospedagem;
+	public Reserva getHospedagem() {
+		return reserva;
 	}
 
-	public void setHospedagem(Hospedagem hospedagem) {
-		this.hospedagem = hospedagem;
+	public void setHospedagem(Reserva reserva) {
+		this.reserva = reserva;
 	}
 
 	public Camareiro getCamareiro() {
@@ -78,11 +78,11 @@ public class ServicoQuarto {
 	/**
 	  * realizarServicoQuarto - Metodo que marca um servi�o como realizado
 	  * 
-	  * @param hospedagem - parametro correspondente ao servico de hospedagem realizado 
+	  * @param reserva - parametro correspondente ao servico de reserva realizado 
 	  *	@param camareiro - funcionario responsavel pelo servico
 	  */
-	public void realizarServicoQuarto(Hospedagem hospedagem, Camareiro camareiro) {
-		this.hospedagem = hospedagem;
+	public void realizarServicoQuarto(Reserva reserva, Camareiro camareiro) {
+		this.reserva = reserva;
 		this.camareiro = camareiro;
 		this.realizado = true;
 	}
@@ -91,16 +91,16 @@ public class ServicoQuarto {
 	  * agendarServicoQuarto - Metodo que agenda servico de quarto
 	  * 
 	  * @param data - a data prevista para realizacao do servico de quarto
-	  * @param hospedagem - parametro correspondente ao servico de hospedagem realizado 
+	  * @param reserva - parametro correspondente ao servico de reserva realizado 
 	  *	@param camareiro - funcionario responsavel pelo servico
 	  */
-	public void agendarServicoQuarto(GregorianCalendar data, Hospedagem hospedagem, Camareiro camareiro) {
+	public void agendarServicoQuarto(GregorianCalendar data, Reserva reserva, Camareiro camareiro) {
 		
 		
 		GregorianCalendar dataAtual = new GregorianCalendar();
 		if (data.compareTo(dataAtual) >= 0) {
 			this.data = data;
-			this.hospedagem = hospedagem;
+			this.reserva = reserva;
 			this.camareiro = camareiro;
 			this.realizado = false;
 		}else {

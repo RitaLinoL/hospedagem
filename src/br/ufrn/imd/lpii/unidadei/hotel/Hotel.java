@@ -19,7 +19,7 @@ public class Hotel {
 	//ATRIBUTOS
 	private String nome;
 	private String CNPJ;
-	private ArrayList<Hospedagem> hospedagens;
+	private ArrayList<Reserva> hospedagens;
 	private ArrayList<Recepcionista> recepcionistas;
 	private ArrayList<Camareiro> camareiros;
 
@@ -29,8 +29,8 @@ public class Hotel {
 	public Hotel() {
 		this.nome = " ";
 		this.CNPJ = " ";
-		this.hospedagens = new ArrayList<Hospedagem>();
-		this.hospedagens.add(new Hospedagem());
+		this.hospedagens = new ArrayList<Reserva>();
+		this.hospedagens.add(new Reserva());
 		this.recepcionistas = new ArrayList<Recepcionista>();
 		this.recepcionistas.add(new Recepcionista());
 		this.camareiros = new ArrayList<Camareiro>();
@@ -45,11 +45,11 @@ public class Hotel {
 	 * @param recepcionistas - lista de funcionários recepcionistas no hotel
 	 * @param camareiro - lista de funcionários camareiros no hotel
 	 * */
-	public Hotel(String nome, String cnpj, ArrayList<Hospedagem> hospedagens, ArrayList<Recepcionista> recepcionistas,
+	public Hotel(String nome, String cnpj, ArrayList<Reserva> hospedagens, ArrayList<Recepcionista> recepcionistas,
 			ArrayList<Camareiro> camareiros) {
 		this.nome = nome;
 		this.CNPJ = cnpj;
-		this.hospedagens = new ArrayList<Hospedagem>();
+		this.hospedagens = new ArrayList<Reserva>();
 		this.hospedagens.addAll(hospedagens);
 		this.recepcionistas = new ArrayList<Recepcionista>();
 		this.recepcionistas.addAll(recepcionistas);
@@ -65,8 +65,8 @@ public class Hotel {
 	public Hotel(String nome, String cnpj) {
 		this.nome = nome;
 		this.CNPJ = cnpj;
-		this.hospedagens = new ArrayList<Hospedagem>();
-		this.hospedagens.add(new Hospedagem());
+		this.hospedagens = new ArrayList<Reserva>();
+		this.hospedagens.add(new Reserva());
 		this.recepcionistas = new ArrayList<Recepcionista>();
 		this.recepcionistas.add(new Recepcionista());
 		this.camareiros = new ArrayList<Camareiro>();
@@ -90,10 +90,10 @@ public class Hotel {
 		this.CNPJ = cnpj;
 	}
 
-	public ArrayList<Hospedagem> getHospedagens(){
+	public ArrayList<Reserva> getHospedagens(){
 		return this.hospedagens;
 	}
-	public void setHospedagens(ArrayList<Hospedagem> hospedagens) {
+	public void setHospedagens(ArrayList<Reserva> hospedagens) {
 		this.hospedagens = hospedagens;
 	}
 	

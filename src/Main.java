@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 import br.ufrn.imd.lpii.unidadei.hotel.Aposento;
-import br.ufrn.imd.lpii.unidadei.hotel.Hospedagem;
+import br.ufrn.imd.lpii.unidadei.hotel.Reserva;
 import br.ufrn.imd.lpii.unidadei.hotel.Hotel;
 import br.ufrn.imd.lpii.unidadei.hotel.clientes.Conta;
 import br.ufrn.imd.lpii.unidadei.hotel.clientes.Hospede;
@@ -51,7 +51,7 @@ public class Main {
 			
 			System.out.println("1 - Adicionar Recepcionistas \n" +
 					"2 - Adicionar Camareiros \n " +
-					"3 - Nova Hospedagem\n" +
+					"3 - Nova Reserva\n" +
 					"4 - Agendar serviço de quarto\n" +
 					"5 - Realizar serviço de quarto\n" +
 					"6 - Listar funcionários\n" +
@@ -112,7 +112,7 @@ public class Main {
 			case 4:
 				//agendar serviço de quarto
 				
-				Hospedagem hospedagem = new Hospedagem();
+				Reserva reserva = new Reserva();
 				GregorianCalendar data = new GregorianCalendar();
 				
 						

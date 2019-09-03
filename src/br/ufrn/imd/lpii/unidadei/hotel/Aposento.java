@@ -3,7 +3,7 @@ package br.ufrn.imd.lpii.unidadei.hotel;
 
 
 /**
- * Classe Aposento, quarto onde o cliente é hospedado 
+ * Classe Aposento, quarto onde o cliente ï¿½ hospedado 
  *
  * @author Rita Lopes
  * @author Hilton Thallyson
@@ -17,30 +17,30 @@ public class Aposento {
 	private int codigo;
 	private double valor;
 	private String descricao;
-	private int numero;
+	private int capacidade;
 	
 	/**
-	 * Construtor padrão
+	 * Construtor padrï¿½o
 	 * */
 	public Aposento() {
 		this.codigo = 0;
 		this.valor = 0.0;
 		this.descricao = " ";
-		this.numero = 0;
+		this.capacidade = 0;
 	}
 	
 	/**
 	 * Construtor parametrizado
 	 * @param codigo - identificador do quarto
 	 * @param valor - valor pago pelo aposente
-	 * @param descricao - descrição do ambiente
-	 * @param numero - número do quarto para localização
+	 * @param descricao - descriï¿½ï¿½o do ambiente
+	 * @param capacidade - nï¿½mero do quarto para localizaï¿½ï¿½o
 	 * */
 	public Aposento(int codigo, double valor, String descricao, int numero) {
 		this.codigo = codigo;
 		this.valor = valor;
 		this.descricao = descricao;
-		this.numero = numero;
+		this.capacidade = numero;
 	}
 	
 	//SETTERS AND GETTERS
@@ -68,11 +68,11 @@ public class Aposento {
 		this.descricao = descricao;
 	}
 	
-	public int getNumero() {
-		return this.numero;
+	public int getCapacidade() {
+		return this.capacidade;
 	}
 	
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setCapacidade(int capacidade) {
+		this.capacidade = capacidade;
 	}
 }
